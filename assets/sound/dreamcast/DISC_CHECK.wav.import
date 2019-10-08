@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DISC_CHECK.wav-778b1c3cde20c300d93a3f83e018ec66.sample"
+
+[deps]
+
+source_file="res://assets/sound/dreamcast/DISC_CHECK.wav"
+dest_files=[ "res://.import/DISC_CHECK.wav-778b1c3cde20c300d93a3f83e018ec66.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

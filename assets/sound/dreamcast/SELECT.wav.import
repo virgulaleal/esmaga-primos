@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SELECT.wav-14a5b4c266352c6b9619f80d0debfa11.sample"
+
+[deps]
+
+source_file="res://assets/sound/dreamcast/SELECT.wav"
+dest_files=[ "res://.import/SELECT.wav-14a5b4c266352c6b9619f80d0debfa11.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

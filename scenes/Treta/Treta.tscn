@@ -1,0 +1,148 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/Treta/Treta.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/cenarios/japao.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Boneco/Boneco.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/art/ui/plain-panel.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/fonts/ceabb-b-16.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/HealthBar/HealthBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/PlainPanel/CaptionPanel/SpeechPanelRight/SpeechPanelRigth.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/art/avatares/placeholder/placeholder-normal.png" type="Texture" id=8]
+[ext_resource path="res://scenes/PlainPanel/CaptionPanel/SpeechPanelLeft/SpeechPanelLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/PlainPanel/CaptionPanel/ActionPanel/ActionPanel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/art/fonts/ceabb-16.tres" type="DynamicFont" id=11]
+[ext_resource path="res://scenes/StatsBox/StatsBox.tscn" type="PackedScene" id=12]
+
+[node name="Treta" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Cenario" type="TextureRect" parent="."]
+margin_right = 360.0
+margin_bottom = 640.0
+texture = ExtResource( 2 )
+
+[node name="Oponente" type="Node2D" parent="."]
+position = Vector2( 180, 360 )
+
+[node name="Boneco" parent="Oponente" instance=ExtResource( 3 )]
+
+[node name="OpStats" type="NinePatchRect" parent="."]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 220.0
+margin_bottom = 80.0
+texture = ExtResource( 4 )
+patch_margin_left = 19
+patch_margin_top = 19
+patch_margin_right = 19
+patch_margin_bottom = 19
+
+[node name="OpNameLabel" type="Label" parent="OpStats"]
+margin_left = 15.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.164706 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Rival amigável"
+clip_text = true
+
+[node name="OpLevelLabel" type="Label" parent="OpStats"]
+margin_left = 160.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+text = "L. 99"
+align = 2
+
+[node name="OpHpLabel" type="Label" parent="OpStats"]
+margin_left = 15.0
+margin_top = 30.0
+margin_right = 40.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "hp"
+
+[node name="OpHP" parent="OpStats" instance=ExtResource( 6 )]
+margin_left = 35.0
+margin_top = 30.0
+margin_right = 200.0
+margin_bottom = 50.0
+number_visible = false
+
+[node name="OpSpeechPanel" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_left = 20.0
+margin_top = 90.0
+margin_right = -150.0
+margin_bottom = -470.0
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 180, 640 )
+
+[node name="Boneco" parent="Player" instance=ExtResource( 3 )]
+texture = ExtResource( 8 )
+
+[node name="PlayerSpeechPanel" parent="." instance=ExtResource( 9 )]
+visible = false
+margin_left = 180.0
+margin_top = 300.0
+margin_right = -10.0
+margin_bottom = -260.0
+
+[node name="ActionPanel" parent="." instance=ExtResource( 10 )]
+margin_top = 490.0
+margin_bottom = -10.0
+
+[node name="AgredirBtn" type="Button" parent="ActionPanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -40.0
+margin_right = -12.0
+margin_bottom = -10.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "AGREDIR"
+
+[node name="GritarBtn" type="Button" parent="ActionPanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -10.0
+margin_right = -12.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "GRITAR"
+
+[node name="RegenerarBtn" type="Button" parent="ActionPanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = 20.0
+margin_right = -12.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "REGENERAR"
+
+[node name="PlayerStats" parent="." instance=ExtResource( 12 )]
+[connection signal="pressed" from="ActionPanel/AgredirBtn" to="." method="_on_AgredirBtn_pressed"]
+[connection signal="pressed" from="ActionPanel/GritarBtn" to="." method="_on_GritarBtn_pressed"]
+[connection signal="pressed" from="ActionPanel/RegenerarBtn" to="." method="_on_RegenerarBtn_pressed"]

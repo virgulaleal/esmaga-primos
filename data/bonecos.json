@@ -1,0 +1,32 @@
+{
+    "erro": {
+        "id": "erro",
+        "nome": "erro",
+        "universo": "erro",
+        "ai": "arcade",
+        "max_hp": 45,
+        "hp": 45,
+        "max_ki": 20,
+        "ki": 20
+    },
+    "placeholder": {
+        "id": "placeholder",
+        "nome": "você",
+        "universo": "coisas-do-virgula",
+        "ai": "arcade",
+        "max_hp": 30,
+        "hp": 30,
+        "max_ki": 30,
+        "ki": 10
+    },
+    "rival-amigavel": {
+        "id": "rival-amigavel",
+        "nome": "rival amigável",
+        "universo": "hq-de-briga",
+        "ai": "arcade",
+        "max_hp": 45,
+        "hp": 45,
+        "max_ki": 24,
+        "ki": 20
+    }
+}

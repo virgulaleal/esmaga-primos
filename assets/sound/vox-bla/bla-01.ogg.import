@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bla-01.ogg-b13e654886fdb9954196365bc8aef1b8.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/vox-bla/bla-01.ogg"
+dest_files=[ "res://.import/bla-01.ogg-b13e654886fdb9954196365bc8aef1b8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
